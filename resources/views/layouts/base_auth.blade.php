@@ -29,6 +29,6 @@
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
 
-@yield('login_content')
+@yield('auth_content')
 
 </html>
