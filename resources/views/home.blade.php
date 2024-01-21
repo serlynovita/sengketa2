@@ -8,17 +8,17 @@
       <div class="col-md-4 col-sm-4  tile_stats_count">
         <span class="count_top"><i class="fa fa-user"></i> Total Pemohon</span>
         <div class="count">{{ $total_pemohon }}</div>
-        <span class="count_bottom"><i class="green">Berdasarkan Tanggal Lapor</span>
+        <span class="count_bottom"><i class="green">Berdasarkan Tanggal Lapor</i></span>
       </div>
       <div class="col-md-4 col-sm-4  tile_stats_count">
-        <span class="count_top"><i class="fa fa-clock-o"></i>Total Pemohon Per Hari Ini</span>
+        <span class="count_top"><i class="fa fa-user"></i> Total Pemohon Per Hari Ini</span>
         <div class="count">{{ $total_pemohon_per_hari_ini_tgl_lapor }}</div>
-        <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i>Berdasarkan Tanggal Lapor</span>
+        <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i>Berdasarkan Tanggal Lapor</i></span>
       </div>
       <div class="col-md-4 col-sm-4  tile_stats_count">
-        <span class="count_top"><i class="fa fa-clock-o"></i>Total Pemohon Per Hari Ini</span>
+        <span class="count_top"><i class="fa fa-user"></i>Total Pemohon Per Hari Ini</span>
         <div class="count">{{ $total_pemohon_per_hari_ini_tgl_selesai }}</div>
-        <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i>Berdasarkan Tanggal Selesai</span>
+        <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i>Berdasarkan Tanggal Selesai</i></span>
       </div>
     </div>
   </div>
@@ -35,7 +35,7 @@
             <div class="col-md-6">
               <div id="reportrange" class="pull-right" style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc">
                 <i class="fa fa-calendar"></i>
-                <span>December 30, 2014 - January 28, 2015</span> <b class="caret"></b>
+                <span></span> <b class="caret"></b>
               </div>
             </div>
           </div>
