@@ -28,18 +28,11 @@
                     </span>
                 @enderror
               </div>
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-
-                <label class="form-check-label" for="remember">
-                    {{ __('Remember Me') }}
-                </label>
-              </div>
               <div>
                 <a class="btn btn-default submit" onclick="document.getElementById('form_login').submit()">Log in</a>
-                @if (Route::has('password.request'))
+                {{-- @if (Route::has('password.request'))
                 <a class="reset_pass" href="{{ route('password.request') }}">Lost your password?</a>
-                @endif
+                @endif --}}
               </div>
 
               <div class="clearfix"></div>
