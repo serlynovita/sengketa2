@@ -7,17 +7,6 @@
         <div class="title_left">
           <h3>Portal Pengaduan Sengketa</small></h3>
         </div>
-
-        <div class="title_right">
-          <div class="col-md-5 col-sm-5   form-group pull-right top_search">
-            <div class="input-group">
-              <input type="text" class="form-control" placeholder="Cari...">
-              <span class="input-group-btn">
-                <button class="btn btn-secondary" type="button">Cari</button>
-              </span>
-            </div>
-          </div>
-        </div>
       </div>
       
       <div class="clearfix"></div>
@@ -29,7 +18,7 @@
               <p>Tabel Pemohon</p>
 
               <!-- start project list -->
-              <table class="table table-striped projects">
+              <table id="tabel_sengketa" class="table table-striped projects">
                 <thead>
                   <tr>
                     <th style="width: 1%">No</th>                  
@@ -38,7 +27,7 @@
                     <th>Tanggal Pelaporan</th>
                     <th>Deskripsi</th>
                     <th>Tanggal Selesai</th>
-                    <th style="width: 20%">Aksi</th>
+                    <th style="width: 21%">Aksi</th>
                   </tr>
                 </thead>
                 <tbody>
