@@ -32,18 +32,21 @@
             <div class="col-md-6">
               <h3>Grafik Pemohon <small>Per Tanggal Lapor</small></h3>
             </div>
-            <div class="col-md-6">
+            {{-- <div class="col-md-6">
               <div id="reportrange" class="pull-right" style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc">
                 <i class="fa fa-calendar"></i>
                 <span></span> <b class="caret"></b>
               </div>
-            </div>
+            </div> --}}
           </div>
 
           <div class="col-md-9 col-sm-9 ">
-            <div id="chart_plot_01" class="demo-placeholder"></div>
+            {{-- <div id="chart_plot_01" class="demo-placeholder"></div> --}}
+            <div class="x_content">
+              <canvas id="grafik_pemohon" height="100px"></canvas>
+            </div>
           </div>
-          <div class="col-md-3 col-sm-3  bg-white">
+          <div class="col-md-3 col-sm-3  bg-white" style="margin-top: -0.8%;">
             <div class="x_title">
               <h2>Total Teratas Pemohon</h2>
               <div class="clearfix"></div>
@@ -71,4 +74,39 @@
 
     </div>
 </div>
+@endsection
+
+@section('extra_js')
+<script>
+  var e = document.getElementById("grafik_pemohon");
+  new Chart(e, {
+      type: "line",
+      data: {
+          labels: @json($data_chart['labels']),
+          datasets: [
+              {
+                  label: "Data Pemohon",
+                  backgroundColor: "rgba(38, 185, 154, 0.31)",
+                  borderColor: "rgba(38, 185, 154, 0.7)",
+                  pointBorderColor: "rgba(38, 185, 154, 0.7)",
+                  pointBackgroundColor: "rgba(38, 185, 154, 0.7)",
+                  pointHoverBackgroundColor: "#fff",
+                  pointHoverBorderColor: "rgba(220,220,220,1)",
+                  pointBorderWidth: 1,
+                  data: @json($data_chart['data']),
+              },
+          ],
+      },
+      options: {
+        scales: {
+          yAxes: [{
+            ticks: {
+              beginAtZero: false,
+              callback: function(value) {if (value % 1 === 0) {return value;}}
+            }
+          }]
+        }
+      }
+  });
+</script>
 @endsection

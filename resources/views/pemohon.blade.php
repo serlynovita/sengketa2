@@ -56,3 +56,9 @@
     </div>
   </div>
 @endsection
+
+@section('extra_js')
+<script>
+  tabel_sengketa = $('#tabel_sengketa').DataTable();
+</script>
+@endsection

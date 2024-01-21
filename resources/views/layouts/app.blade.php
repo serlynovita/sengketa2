@@ -184,8 +184,6 @@
     <script src="{{url('assets/vendors/datatables.net-scroller/js/dataTables.scroller.min.js')}}"></script>
     <!-- Custom Theme Scripts -->
     <script src="{{url('assets/build/js/custom.min.js')}}"></script>
-    <script>
-      tabel_sengketa = $('#tabel_sengketa').DataTable();
-    </script>
+    @yield('extra_js')
   </body>
 </html>
