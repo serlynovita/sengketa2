@@ -41,7 +41,8 @@
                         <td>{{ $p->tanggal_selesai_locale_id }}</td>
                         <td>
                             <a href="/pemohon/edit/{{ $p->id }}" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i> Edit </a>
-                            <a href="/pemohon/hapus/{{ $p->id }}" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Hapus </a>
+                            {{-- <a href="/pemohon/hapus/{{ $p->id }}" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Hapus </a> --}}
+                            <a onclick="hapusPemohon({{ $p->id }})" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Hapus </a>
                         </td>
                     </tr>
                     @endforeach
@@ -58,7 +59,10 @@
 @endsection
 
 @section('extra_js')
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script>
+  var APP_URL = {!! json_encode(url('/')) !!}
+
   tabel_sengketa = $('#tabel_sengketa').DataTable({
     dom: '<"container-fluid"<"row"<"col-md-6"l><"col-md-4"f><"col-md-2"B>>>rtip',
     buttons: [
@@ -72,5 +76,26 @@
       }
     ]
   });
+
+  function hapusPemohon(id_pemohon) {
+    Swal.fire({
+      title: "Apakah anda yakin ingin menghapus?",
+      text: "Anda tidak akan dapat mengembalikan data ini!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Ya, hapus!"
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire({
+          title: "Terhapus!",
+          text: "Data anda telah terhapus.",
+          icon: "success"
+        });
+        window.location.href = APP_URL+"/pemohon/hapus/"+id_pemohon
+      }
+    });
+  }
 </script>
 @endsection

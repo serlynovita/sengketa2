@@ -32,6 +32,9 @@ class HomeController extends Controller
 
         $all_tanggal_pelaporan = Pemohon::select('tanggal_pelaporan')->distinct()->orderBy('tanggal_pelaporan', 'ASC')->pluck('tanggal_pelaporan');
         $all_pemohon = Pemohon::select(Pemohon::raw('count(tanggal_pelaporan) as jumlah_lapor'))->groupBy('tanggal_pelaporan')->orderBy('tanggal_pelaporan', 'ASC')->pluck('jumlah_lapor');
+
+        // $all_tanggal_selesai = Pemohon::select('tanggal_selesai')->distinct()->orderBy('tanggal_selesai', 'ASC')->pluck('tanggal_selesai');
+        // $all_pemohon = Pemohon::select(Pemohon::raw('count(tanggal_selesai) as jumlah_lapor'))->groupBy('tanggal_selesai')->orderBy('tanggal_selesai', 'ASC')->pluck('jumlah_lapor');
     	
         $data_chart = [
             'labels' => $all_tanggal_pelaporan,
