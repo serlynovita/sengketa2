@@ -11,13 +11,13 @@ class Pemohon extends Model
     protected $table = "pemohon";
     protected $fillable = ['nama_pemohon','alamat','tanggal_pelaporan','deskripsi','tanggal_selesai'];
 
-    public function getTanggalPelaporanAttribute($value)
+    public function getTanggalPelaporanLocaleIdAttribute()
     {
-        return Carbon::parse($value)->translatedFormat('l, d F Y');
+        return Carbon::parse($this->tanggal_pelaporan)->translatedFormat('l, d F Y');
     }
 
-    public function getTanggalSelesaiAttribute($value)
+    public function getTanggalSelesaiLocaleIdAttribute($value)
     {
-        return Carbon::parse($value)->translatedFormat('l, d F Y');
+        return Carbon::parse($this->tanggal_selesai)->translatedFormat('l, d F Y');
     }
 }

@@ -36,9 +36,9 @@
                         <td>{{ $loop->iteration }}</td>
                         <td>{{ $p->nama_pemohon }}</td>
                         <td>{{ $p->alamat }}</td>
-                        <td>{{ $p->tanggal_pelaporan }}</td>
+                        <td>{{ $p->tanggal_pelaporan_locale_id }}</td>
                         <td>{{ $p->deskripsi }}</td>
-                        <td>{{ $p->tanggal_selesai }}</td>
+                        <td>{{ $p->tanggal_selesai_locale_id }}</td>
                         <td>
                             <a href="/pemohon/edit/{{ $p->id }}" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i> Edit </a>
                             <a href="/pemohon/hapus/{{ $p->id }}" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Hapus </a>

@@ -55,7 +55,7 @@
             <div class="col-md-12 col-sm-12 ">
               @foreach($total_teratas_pemohon as $p)
               <div @if(!$loop->first)style="margin-top: 5%;"@endif>
-                <p><b>{{ $p->tanggal_pelaporan }}</b></p>
+                <p><b>{{ $p->tanggal_pelaporan_locale_id }}</b></p>
                 <div class="">
                   {{-- <div class="progress progress_sm" style="width: {{ $p->jumlah_lapor }}%;">
                     <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="80"></div>
