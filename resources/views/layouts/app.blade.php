@@ -36,6 +36,7 @@
     <link href="{{url('assets/vendors/datatables.net-scroller-bs/css/scroller.bootstrap.min.css')}}" rel="stylesheet">
     <!-- Custom Theme Style -->
     <link href="{{url('assets/build/css/custom.min.css')}}" rel="stylesheet">
+    @yield('extra_css')
 </head>
 <body class="nav-md" @if(Route::is('home'))style="overflow-y: hidden;"@endif>
     <div class="container body">
@@ -182,6 +183,9 @@
     <script src="{{url('assets/vendors/datatables.net-responsive/js/dataTables.responsive.min.js')}}"></script>
     <script src="{{url('assets/vendors/datatables.net-responsive-bs/js/responsive.bootstrap.js')}}"></script>
     <script src="{{url('assets/vendors/datatables.net-scroller/js/dataTables.scroller.min.js')}}"></script>
+    <script src="{{url('assets/vendors/jszip/dist/jszip.min.js')}}"></script>
+    <script src="{{url('assets/vendors/pdfmake/build/pdfmake.min.js')}}"></script>
+    <script src="{{url('assets/vendors/pdfmake/build/vfs_fonts.js')}}"></script>
     <!-- Custom Theme Scripts -->
     <script src="{{url('assets/build/js/custom.min.js')}}"></script>
     @yield('extra_js')

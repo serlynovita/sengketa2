@@ -59,6 +59,18 @@
 
 @section('extra_js')
 <script>
-  tabel_sengketa = $('#tabel_sengketa').DataTable();
+  tabel_sengketa = $('#tabel_sengketa').DataTable({
+    dom: '<"container-fluid"<"row"<"col-md-6"l><"col-md-4"f><"col-md-2"B>>>rtip',
+    buttons: [
+      {
+         extend: 'pdf',
+         text: '<i class="fa fa-download"> Download PDF',
+         className: 'btn btn-success',
+         exportOptions: {
+            columns: 'th:not(:last-child)'
+         }
+      }
+    ]
+  });
 </script>
 @endsection
